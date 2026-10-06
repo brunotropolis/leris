@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Léris · Linha Visual</title>
+<meta name="description" content="Linha visual da Léris: logo, paleta, tipografia, elementos e todos os arquivos para baixar.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="arquivos/elementos/estrela.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--creme:#F3E8D2;--papel:#FFF8EC;--tinta:#2A1A0E;--laranja:#E2711D;--mostarda:#D99A1E;--terracota:#A84B1C;--abacate:#6B6A22;--petroleo:#0B4A66;--rei:#0A3E8F;--magenta:#8E2A5C;--fucsia:#C8285A}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--creme) url(fundo-site.jpg) center top/cover fixed;color:var(--tinta);font-family:'DM Sans',sans-serif;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:inherit}
+.stripes{height:16px;background:linear-gradient(var(--mostarda) 0 25%,var(--laranja) 25% 50%,var(--terracota) 50% 75%,var(--petroleo) 75%)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:rgba(243,232,210,.92);backdrop-filter:blur(6px);border-bottom:3px solid var(--tinta)}
+nav .wrap{display:flex;gap:6px;align-items:center;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+nav b{font-family:'Shrikhand';font-weight:400;font-size:22px;margin-right:10px;white-space:nowrap}
+nav a{font-family:'Space Mono',monospace;font-size:13px;text-decoration:none;padding:6px 12px;border:2px solid var(--tinta);border-radius:99px;white-space:nowrap;background:var(--papel)}
+nav a:hover{background:var(--mostarda)}
+header{padding:56px 0 40px;text-align:center}
+header img{width:min(720px,100%);margin:0 auto}
+header p{max-width:620px;margin:22px auto 0;font-size:19px}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:'Space Mono';font-weight:700;font-size:15px;text-decoration:none;background:var(--laranja);color:var(--tinta);border:3px solid var(--tinta);border-radius:99px;padding:14px 28px;box-shadow:5px 5px 0 var(--tinta);transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--tinta)}
+.btn small{font-weight:400;opacity:.8}
+section{padding:46px 0}
+.tag{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--terracota);display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.tag::before{content:"✦";color:var(--mostarda);font-size:18px}
+h2{font-family:'Shrikhand';font-weight:400;font-size:clamp(34px,5vw,50px);line-height:1.1;margin-bottom:14px;text-shadow:2px 2px 0 var(--mostarda),4px 4px 0 var(--laranja)}
+.lead{max-width:720px;font-size:17px;margin-bottom:26px}
+.card{background:var(--papel);border:3px solid var(--tinta);border-radius:18px;box-shadow:6px 6px 0 var(--tinta);padding:22px}
+.grid{display:grid;gap:20px}
+.pal{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.sw{background:var(--papel);border:3px solid var(--tinta);border-radius:14px;overflow:hidden;box-shadow:5px 5px 0 var(--tinta)}
+.sw .cor{height:110px}
+.sw .info{padding:12px 14px;font-family:'Space Mono';font-size:13px}
+.sw .info b{font-family:'DM Sans';font-size:16px;display:block}
+.sw button{margin-top:8px;font:inherit;font-size:12px;cursor:pointer;background:none;border:2px solid var(--tinta);border-radius:99px;padding:3px 10px}
+.sw button.ok{background:var(--abacate);color:#fff}
+.prop{display:flex;height:30px;border:3px solid var(--tinta);border-radius:99px;overflow:hidden;margin-top:24px}
+.fontes{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.fontes small{font-family:'Space Mono';font-size:12px;color:var(--terracota);display:block;margin-bottom:8px}
+.amostra-t{font-family:'Shrikhand';font-size:54px;line-height:1.05;color:var(--laranja);text-shadow:2px 2px 0 var(--mostarda),4px 4px 0 var(--terracota),6px 6px 0 var(--petroleo)}
+.fontes a.link{display:inline-block;margin-top:14px;font-family:'Space Mono';font-size:13px;font-weight:700}
+.regras{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.regras h3{font-family:'Shrikhand';font-weight:400;font-size:24px;margin-bottom:8px}
+.regras ul{padding-left:20px}
+.regras li{margin:4px 0}
+.ok3{border-color:var(--abacate)!important}
+.no3{border-color:var(--fucsia)!important}
+.chk{background:repeating-conic-gradient(#ddd 0 25%,#fff 0 50%) 0 0/20px 20px}
+.dl{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.item{background:var(--papel);border:3px solid var(--tinta);border-radius:16px;overflow:hidden;box-shadow:5px 5px 0 var(--tinta);display:flex;flex-direction:column}
+.item .prev{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:12px;border-bottom:3px solid var(--tinta)}
+.item .prev img,.item .prev video{max-height:100%;width:auto;object-fit:contain}
+.item .prev video{width:100%;height:100%;object-fit:cover}
+.item .meta{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.item .meta b{font-size:15px;line-height:1.3}
+.item .meta span{font-family:'Space Mono';font-size:12px;opacity:.75}
+.item .meta a{margin-top:auto;align-self:flex-start;font-family:'Space Mono';font-weight:700;font-size:13px;text-decoration:none;background:var(--mostarda);border:2px solid var(--tinta);border-radius:99px;padding:5px 14px}
+.item .meta a:hover{background:var(--laranja)}
+h3.cat{font-family:'Shrikhand';font-weight:400;font-size:28px;margin:34px 0 14px}
+.obs{font-family:'Space Mono';font-size:13px;background:var(--papel);border:2px dashed var(--tinta);border-radius:12px;padding:12px 16px;margin-top:18px}
+footer{padding:30px 0 40px;font-family:'Space Mono';font-size:13px;text-align:center}
+@media (max-width:600px){header{padding-top:36px}.amostra-t{font-size:42px}}
+</style>
+</head>
+<body>
+<div class="stripes"></div>
+<nav><div class="wrap">
+  <b>Léris</b>
+  <a href="#marca">Marca</a><a href="#cores">Cores</a><a href="#fontes">Fontes</a><a href="#logo">Logo</a><a href="#elementos">Elementos</a><a href="#downloads">Downloads</a>
+</div></nav>
+
+<div class="wrap">
+<header id="marca">
+  <img src="arquivos/logo/leris-logo-transparente.png" alt="Logo Léris">
+  <p>Uma marca com cheiro de <b>fita cassete, revistinha e domingo à tarde</b>. Letras gordas e bem-humoradas, cores dos anos 70 e ícones de quem cresceu entre o vinil e o Windows 95. <b>Retrô com afeto, nunca empoeirado.</b></p>
+  <a class="btn" href="arquivos/leris-kit-completo.zip" download>⬇ Baixar o kit completo <small>(.zip)</small></a>
+</header>
+
+<section id="cores">
+  <div class="tag">paleta · retro 70's</div>
+  <h2>Cores</h2>
+  <p class="lead">Clique em <b>copiar</b> pra levar o código da cor pro Canva, Photoshop ou qualquer programa. Creme e chocolate são a base; laranja e mostarda são o destaque; azuis, verde e rosas entram como tempero.</p>
+  <div class="grid pal" id="paleta"></div>
+  <div class="prop" title="Proporção de uso">
+    <span style="flex:40;background:var(--creme)"></span><span style="flex:18;background:var(--tinta)"></span><span style="flex:14;background:var(--laranja)"></span><span style="flex:10;background:var(--mostarda)"></span><span style="flex:7;background:var(--petroleo)"></span><span style="flex:5;background:var(--terracota)"></span><span style="flex:3;background:var(--abacate)"></span><span style="flex:3;background:var(--fucsia)"></span>
+  </div>
+  <p style="font-family:'Space Mono';font-size:12px;margin-top:8px">proporção de uso: muito creme e chocolate · um pouco de laranja e mostarda · pitadas do resto</p>
+</section>
+
+<section id="fontes">
+  <div class="tag">tipografia</div>
+  <h2>Fontes</h2>
+  <p class="lead">As três são gratuitas (Google Fonts). Já existem dentro do Canva com o mesmo nome; pra usar no computador, é só baixar e instalar.</p>
+  <div class="grid fontes">
+    <div class="card"><small>TÍTULOS</small><div class="amostra-t">Shrikhand</div>
+      <p style="margin-top:14px">Títulos e chamadas curtas. A assinatura da marca é a <b>sombra empilhada</b> em mostarda → laranja → terracota → azul petróleo.</p>
+      <a class="link" href="https://fonts.google.com/specimen/Shrikhand" target="_blank" rel="noopener">⬇ Baixar Shrikhand</a></div>
+    <div class="card"><small>DETALHES</small><div style="font-family:'Space Mono';font-size:30px;font-weight:700;line-height:1.3">REC ● 00:04:20</div>
+      <p style="margin-top:14px">Etiquetas, legendas pequenas, horários. Lembra máquina de escrever e tela de computador antigo.</p>
+      <a class="link" href="https://fonts.google.com/specimen/Space+Mono" target="_blank" rel="noopener">⬇ Baixar Space Mono</a></div>
+    <div class="card"><small>TEXTO CORRIDO</small><div style="font-size:30px;font-weight:800;line-height:1.3">DM Sans</div>
+      <p style="margin-top:14px">Textos maiores, descrições e tudo que precisa ser lido com calma. Limpa, pra não brigar com o título.</p>
+      <a class="link" href="https://fonts.google.com/specimen/DM+Sans" target="_blank" rel="noopener">⬇ Baixar DM Sans</a></div>
+  </div>
+</section>
+
+<section id="logo">
+  <div class="tag">uso da logo</div>
+  <h2>Logo</h2>
+  <div class="grid regras">
+    <div class="card ok3"><h3>✓ Pode</h3><ul>
+      <li>Usar sobre o creme, o fundo bege ou fundos claros.</li>
+      <li>Deixar um respiro em volta (pelo menos a altura do "S").</li>
+      <li>Rodear com os adesivos da marca, sem encostar nas letras.</li>
+      <li>Usar a versão transparente (PNG) em cima de fotos claras.</li></ul></div>
+    <div class="card no3"><h3>✕ Evite</h3><ul>
+      <li>Esticar, achatar ou girar a logo.</li>
+      <li>Trocar as cores das letras ou da sombra.</li>
+      <li>Colocar sobre fundo escuro ou muito colorido (some a sombra).</li>
+      <li>Usar em tamanho muito pequeno (menos de 120 px de largura).</li></ul></div>
+    <div class="card chk" style="display:flex;align-items:center;justify-content:center"><img src="arquivos/logo/leris-logo-transparente.png" alt="Logo em fundo transparente"></div>
+  </div>
+</section>
+
+<section id="elementos">
+  <div class="tag">elementos de composição</div>
+  <h2>Adesivos, padrões e personagem</h2>
+  <p class="lead">Contorno chocolate grosso, cor chapada e pontilhado leve. Use 3 ou 4 por peça, espalhados nas bordas, levemente girados, como adesivos colados.</p>
+  <div class="card"><img src="arquivos/elementos/_folha-completa.png" alt="Folha com os 12 adesivos"></div>
+</section>
+
+<section id="downloads">
+  <div class="tag">alta resolução</div>
+  <h2>Downloads</h2>
+  <p class="lead">Clique em <b>baixar</b> em cada arquivo, ou pegue tudo de uma vez no botão do topo.</p>
+  <div id="listas"></div>
+  <div class="obs">ℹ A logo, a personagem e os adesivos são imagens (PNG), não vetor. Servem pra redes, live e telas. Pra gráfica, impressão grande ou edição de traço, o ideal é redesenhar em vetor.</div>
+</section>
+</div>
+
+<div class="stripes"></div>
+<footer>LÉRIS · linha visual · 2026</footer>
+
+<script>
+const CORES=[["Laranja Brulé","#E2711D"],["Mostarda","#D99A1E"],["Terracota","#A84B1C"],["Abacate","#6B6A22"],["Azul Petróleo","#0B4A66"],["Azul Rei","#0A3E8F"],["Magenta","#8E2A5C"],["Fúcsia","#C8285A"],["Chocolate · texto","#2A1A0E"],["Creme · fundo","#F3E8D2"]];
+const rgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)).join(", ");
+document.getElementById("paleta").innerHTML=CORES.map(([n,h])=>`<div class="sw"><div class="cor" style="background:${h}"></div><div class="info"><b>${n}</b>HEX ${h}<br>RGB ${rgb(h)}<br><button data-hex="${h}">copiar ${h}</button></div></div>`).join("");
+document.addEventListener("click",e=>{const b=e.target.closest("button[data-hex]");if(!b)return;
+  const done=()=>{const t=b.textContent;b.textContent="copiado ✓";b.classList.add("ok");setTimeout(()=>{b.textContent=t;b.classList.remove("ok")},1400)};
+  if(navigator.clipboard)navigator.clipboard.writeText(b.dataset.hex).then(done,done);else done();});
+const A="arquivos/";
+const LISTAS=[
+ ["Logo",[["logo/leris-logo-transparente.png","Logo · fundo transparente","PNG · 1080×471"],["logo/leris-logo-fundo-creme.png","Logo · fundo creme","PNG · 1408×768"]]],
+ ["Personagem",[["personagem/le-joinha.png","Lê fazendo joinha","PNG transparente · 392×654"],["personagem/le-acenando.png","Lê acenando","PNG transparente · 424×695"],["personagem/le-joinha-piscando.png","Lê joinha · olhos fechados","PNG transparente"],["personagem/le-acenando-piscando.png","Lê acenando · olhos fechados","PNG transparente"]]],
+ ["Capas e banners",[["capas/leris-capa-youtube-2560x1440.jpg","Capa do YouTube","JPG · 2560×1440"],["capas/leris-banner-twitch-1200x480.jpg","Banner da Twitch","JPG · 1200×480"]]],
+ ["Painéis da Twitch",[["paineis/leris-painel-regras-640x274.png","Painel Regras","PNG · 640×274 (nítido)"],["paineis/leris-painel-sobre-640x274.png","Painel Sobre","PNG · 640×274 (nítido)"],["paineis/leris-painel-regras-320x137.png","Painel Regras · pequeno","PNG · 320×137"],["paineis/leris-painel-sobre-320x137.png","Painel Sobre · pequeno","PNG · 320×137"]]],
+ ["Telas da live (vídeo em loop)",[["telas/leris-tela-daqui-a-pouco-loop.mp4","Daqui a pouco começa a live","MP4 · 1920×1080 · 10s"],["telas/leris-tela-ja-volto-loop.mp4","Já volto, não saia!","MP4 · 1920×1080 · 10s"],["telas/leris-tela-live-acabou-loop.mp4","A live acabou","MP4 · 1920×1080 · 10s"]]],
+ ["Telas da live (imagem parada)",[["telas/leris-tela-daqui-a-pouco.png","Daqui a pouco · estática","PNG · 1920×1080"],["telas/leris-tela-ja-volto.png","Já volto · estática","PNG · 1920×1080"],["telas/leris-tela-live-acabou.png","A live acabou · estática","PNG · 1920×1080"]]],
+ ["Transição de cena (OBS)",[["transicao/leris-transicao-alfa.webm","Transição · fundo transparente","WEBM · 2,5s · ponto de transição 1200 ms"],["transicao/leris-transicao-preview.mp4","Transição · prévia","MP4 · só pra visualizar"],["transicao/leris-composicao.png","Logo com adesivos · transparente","PNG · 1920×1080"],["transicao/leris-composicao-fundo.jpg","Logo com adesivos · fundo bege","JPG · 1920×1080"]]],
+ ["Fundos e padrões",[["padroes/fundo-bege-4k.jpg","Fundo bege oficial","JPG · 3840×2160"],["padroes/fundo-bege-stories.jpg","Fundo bege · stories","JPG · 1080×1920"],["padroes/padrao-quadrados-70s.png","Padrão quadrados anos 70","PNG · 1024×1024 · repete"],["padroes/padrao-estrelas.png","Padrão estrelas","PNG · 1024×1024 · repete"]]],
+ ["Adesivos (PNG transparente)",["cassete","vinil","tv","celular","estrela","sol","joinha","cursor","boombox","coracao","arcoiris","flor"].map(n=>["elementos/"+n+".png",{coracao:"Coração",arcoiris:"Arco-íris",tv:"TV"}[n]||n[0].toUpperCase()+n.slice(1),"PNG transparente"]).concat([["elementos/_folha-completa.png","Folha com os 12","PNG · 1408×768"]])],
+];
+const prev=(f)=>/\.(mp4|webm)$/.test(f)
+  ? (f.endsWith(".webm")?`<video src="${A}transicao/leris-transicao-preview.mp4" muted loop playsinline preload="none" onmouseenter="this.play()" onmouseleave="this.pause()"></video>`:`<video src="${A+f}" muted loop playsinline preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause()"></video>`)
+  : `<img src="${A+f}" loading="lazy" alt="">`;
+document.getElementById("listas").innerHTML=LISTAS.map(([cat,itens])=>`<h3 class="cat">${cat}</h3><div class="grid dl">`+
+  itens.map(([f,n,m])=>`<div class="item"><div class="prev ${/transparente|painel|elementos\/|personagem|logo-transp/.test(f+m)?'chk':''}">${prev(f)}</div><div class="meta"><b>${n}</b><span>${m}</span><a href="${A+f}" download>⬇ baixar</a></div></div>`).join("")+`</div>`).join("");
+</script>
+</body>
+</html>
